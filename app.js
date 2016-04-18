@@ -21,7 +21,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.locals.basedir = path.join(__dirname, 'views');
+
+app.use('/myPIP', routes.myPIP);
+app.use('/timetable', routes.timetable);
+
 app.use('/', routes.login);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
