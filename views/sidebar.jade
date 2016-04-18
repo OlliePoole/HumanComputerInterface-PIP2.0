@@ -1,0 +1,40 @@
+ul#nav-mobile.side-nav.fixed(style='transform: translateX(0%);')
+  li.bold#my_pip_button
+    a.waves-effect.waves-teal(href='') My PIP
+  li.bold#my_timetable_button
+    a.waves-effect.waves-teal(href='') My Timetable
+  li.bold#my_modules_button
+    a.waves-effect.waves-teal(href='') My Modules
+  li.bold#my_settings_button
+    a.waves-effect.waves-teal(href='') My Settings
+    
+    
+script.
+  $(document).ready(function () {
+    
+    var page = window.location.href;
+    page = page.substr((page.lastIndexOf('/') + 1));
+    page = page.split('.');
+    page = page[0];
+    
+    page = page.toUpperCase();
+
+    switch (page) {
+      case "PIP":
+        $('#my_pip_button').addClass('active');
+        break;
+      case "TIMETABLE":
+        $('#my_timetable_button').addClass('active');
+        break;
+      case "MODULES":
+        $('#my_modules_button').addClass('active');
+        break;
+      case "SETTINGS":
+        $('#my_settings_button').addClass('active');
+        break;
+    
+    }
+  });
+      
+
+        
