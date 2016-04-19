@@ -1,2 +1,14 @@
 
 /* Style sheet for main-layout components */
+
+.center-aliged-material-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.center-aligned-text {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}

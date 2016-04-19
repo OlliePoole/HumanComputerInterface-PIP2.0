@@ -25,6 +25,8 @@ app.locals.basedir = path.join(__dirname, 'views');
 
 app.use('/myPIP', routes.myPIP);
 app.use('/timetable', routes.timetable);
+app.use('/modules', routes.modules);
+app.use('/settings', routes.settings);
 
 app.use('/', routes.login);
 
