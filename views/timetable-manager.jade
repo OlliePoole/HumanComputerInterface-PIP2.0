@@ -26,20 +26,25 @@ block content
         td
       tr
         td
+      tr
+        td
         // TODO: Fix this so it reads from the index.js file
-        //- - var modules = [{name: "Machine Vision", time: "9AM", location: "T1.23"}, {}, {}, {}, {name: "Human Computer Interface", time: "9AM", location: "H1.23"}]
-        //- - each item in modules
-        //-   td
-        //-     - if item
+        //- script.
+        //-   var modules = !{JSON.stringify(morningModules)}
+        //-   modules.forEach(function(module) {
+        //-     
+        //-   });
+        //-     td
         //-       .card-panel.teal
         //-         .span.white-text
-        //-           p !{item.name}
-        //-       
-        //-           i.material-icons.left alarm
-        //-           p !{item.time}
-        //-       
-        //-           i.material-icons.left place
-        //-           p !{item.location}
+        //-           p Hello
+                  //!{item.name}
+              
+                  //- i.material-icons.left alarm
+                  //- p !{item.time}
+                  //- 
+                  //- i.material-icons.left place
+                  //- p !{item.location}
         
   .row
     .col.s4
@@ -53,7 +58,7 @@ block content
     .col.s4
       a.waves-effect.waves-light.btn(id='exam_button', onClick="examButtonClicked();")
         | Exam
-
+  
   script.
     function semesterOneButtonClicked() {
       $('#semester_one_button').addClass('disabled');

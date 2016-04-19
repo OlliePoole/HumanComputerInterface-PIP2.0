@@ -39,5 +39,5 @@ exports.modules = function(req, res) {
 
 /* GET My Settings page */
 exports.settings = function(req, res){
-  res.render('settings-manager', { title: 'PIP 2.0 - Settings' });
+  res.render('settings-manager', { title: 'My Settings' });
 };
