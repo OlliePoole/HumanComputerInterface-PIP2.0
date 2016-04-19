@@ -21,3 +21,9 @@ header, main, footer {
   display: block;
   font-weight: bold;
 }
+
+.change-timetable-button {
+  display: block;
+  vertical-align: bottom;
+  /* TODO: Fix this! */
+}
