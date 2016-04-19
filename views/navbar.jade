@@ -1,10 +1,10 @@
 // Navbar for the site
 
-nav.light-blue.lighten-1(role='navigation')
-  .nav-wrapper.container
-    ul.right.hide-on-med-and-down
-      // List items for navBar go here
-      li
-        .input-field.col.s6  
-          input#search_bar.validate(type='text')
-          label(for='search_bar') Search PIP...
+nav
+  .nav-wrapper
+    form
+      .input-field
+        input#search(type='search', required='')
+        label(for='search')
+          i.material-icons search
+        i.material-icons close

@@ -1,6 +1,10 @@
 
 /* Style sheet for main-layout components */
 
+header, main, footer {
+  padding-left: 240px;
+}
+
 .center-aliged-material-img {
   display: block;
   margin-left: auto;
@@ -10,5 +14,10 @@
 .center-aligned-text {
   display: block;
   text-align: center;
+  font-weight: bold;
+}
+
+.accordian-title-text {
+  display: block;
   font-weight: bold;
 }
