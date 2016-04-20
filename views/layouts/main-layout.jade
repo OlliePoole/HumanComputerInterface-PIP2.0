@@ -1,5 +1,7 @@
 // Layout for general pages
 
+- var userType = user
+
 doctype html
 html
   head
@@ -18,12 +20,17 @@ html
   body
     
     header
-      include ../navbar.jade
+      include ../navbar
   
     main
       .container
         .row
-          include ../sidebar.jade
+          if (userType == 0)
+            include ../sidebar/student-sidebar
+          else if (userType == 1)
+            include ../sidebar/lecturer-sidebar
+          else if (userType == 2)
+            include ../sidebar/applicant-sidebar
+          
           block content
-            
-            
+          

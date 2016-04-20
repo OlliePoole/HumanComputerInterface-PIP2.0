@@ -1,11 +1,21 @@
 // Navbar for the site
 
-nav
-  .nav-wrapper
-    form
-      .input-field
-        input#search(type='search', required='')
-        label(for='search')
-          i.material-icons search
-        i.material-icons close
+.navbar-fixed
+  nav
+    .nav-wrapper
+      form
+        .input-field
+          input#search(type='search', required='')
+          label(for='search')
+            i.material-icons search
+          i.material-icons close
       
+
+  script.
+    
+    $("#search").keyup(function(event){
+      if(event.keyCode == 13){
+        var searchTerm = $('#search').val();
+        // do something with the search term
+      }
+    });
