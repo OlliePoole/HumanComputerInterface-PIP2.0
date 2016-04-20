@@ -28,25 +28,66 @@ block content
           tr
             td U08009 Introduction to OO Programming
             td Passed
-            td 75
+            td 90
           tr
             td U08010 Software Development Environments
             td Passed
-            td 68
+            td 85
           tr
             td U08007 Business Computing(double)
-            td Passed
-            td 71
+            td Failed
+            td 15
+          tr
+            td U08025 Foundations of Computation
+          tr
+            td U08026 Further OO Programming
+          tr
+            td U08054 Web Technology
+          tr
+            td U08223 Data Structures
       
-    
+      .row
+        a.waves-effect.waves-light.btn.modal-trigger(href='#module_change_dialog')
+          | Request Module Change
+          
+      #module_change_dialog.modal
+        .modal-content
+          .col.s6
+            p Current Modules
+            ul.collection
+              li.collection-item U08025 Foundations of Computation
+              li.collection-item U08026 Further OO Programming
+              li.collection-item U08054 Web Technology
+              
+          .col.s6
+            p Available Modules
+            ul.collection
+              li.collection-item U08225 Foundations of Operating Systems
+              li.collection-item U08626 Graph Theory
+              li.collection-item U08521 Robotics Systems Engineering
+
+        .modal-footer
+          a.modal-action.modal-close.waves-effect.waves-green.btn-flat
+            | Save Changes
+          a.modal-action.modal-close.waves-effect.waves-red.btn-flat 
+            | Cancel
+
+
+    // Right Side
     .col.s3
       .center-align
         h5 Summary
         p Average
+        img(src='/images/progress-indicator.png', alt='Current Progress', class='circle responsive-img center-aliged-material-img')
         
         p.bold Modules Passed
         ul.collection
           li.collection-item Level Four: 7/8
           li.collection-item Level Five: 0/10
           li.collection-item Level Six : 0/6
+          
+    script.
+      $(document).ready(function() {
+        $('.modal-trigger').leanModal();
+      });
           

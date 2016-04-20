@@ -14,25 +14,38 @@ exports.myPIP = function(req, res) {
 /* GET My Timetbale page */
 exports.timetable = function(req, res){
 
-  //var morningModules = ;
+  // Semester One
+  var semesterOneMorningModules = [{name: "Machine Vision", time: "9AM", location: "T1.23"},
+                          {},
+                          {},
+                          {},
+                          {name: "Human Computer Interface", time: "9AM", location: "H1.23"}];
 
-  var afternoonModules = [{},
+  var semesterOneAfternoonModules = [{},
                           {},
                           {name: "Web Technology", time: "1PM", location: "C1.13"},
                           {},
                           {}];
 
+  // Semester Two
+  var semesterTwoMorningModules = [{},
+                          {},
+                          {},
+                          {name: "Graph Theory", time: "9AM", location: "EL.17"},
+                          {}];
+
+  var semesterTwoAfternoonModules = [{},
+                          {name: "Advanced OOP", time: "1PM", location: "C2.12"},
+                          {name: "Data Structures", time: "1PM", location: "C1.13"},
+                          {},
+                          {}];
+
   res.render('timetable-manager', { title: 'My Timetable',
-                                    morningModules: [{
-	                                         "name": "Machine Vision",
-	                                         "time": "9AM",
-	                                          "location": "T1.23"
-                                                    }, {}, {}, {}, {
-	                                                     "name": "Human Computer Interface",
-	                                                      "time": "9AM",
-	                                                       "location": "H1.23"
-                                                       }],
-                                    afternoonModules: afternoonModules });
+                                    semesterOne: {morning: semesterOneMorningModules,
+                                                  afternoon: semesterOneAfternoonModules},
+                                    semesterTwo: {morning: semesterTwoMorningModules,
+                                                  afternoon: semesterTwoAfternoonModules}
+                                    });
 };
 
 /* GET My Modules page */
