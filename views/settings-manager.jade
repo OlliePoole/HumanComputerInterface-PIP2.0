@@ -1,7 +1,7 @@
 extends layouts/main-layout
 
 block content
-  h1 #{title}
+  h3 #{title}
   
   .row
     .col.s12
@@ -45,9 +45,12 @@ block content
             span.accordian-title-text Update Profile Image
             
           .collapsible-body
-            .btn
-              span File
-              input(type='file')
+            .file-field.input-field
+              .btn
+                span File
+                input(type='file')
+              .file-path-wrapper
+                input.file-path.validate(type='text')
               
             .file-path-wrapper
               input.file-path.validate(type='text')

@@ -23,18 +23,22 @@ exports.timetable = function(req, res){
                           {}];
 
   res.render('timetable-manager', { title: 'My Timetable',
-                                    morningModules: [{name: "Machine Vision", time: "9AM", location: "T1.23"},
-                                                          {},
-                                                          {},
-                                                          {},
-                                                          {name: "Human Computer Interface", time: "9AM", location: "H1.23"}],
+                                    morningModules: [{
+	                                         "name": "Machine Vision",
+	                                         "time": "9AM",
+	                                          "location": "T1.23"
+                                                    }, {}, {}, {}, {
+	                                                     "name": "Human Computer Interface",
+	                                                      "time": "9AM",
+	                                                       "location": "H1.23"
+                                                       }],
                                     afternoonModules: afternoonModules });
 };
 
 /* GET My Modules page */
 exports.modules = function(req, res) {
 
-  res.render('module-manager', { title: 'PIP 2.0 - Modules'});
+  res.render('module-manager', { title: 'My Modules'});
 };
 
 /* GET My Settings page */

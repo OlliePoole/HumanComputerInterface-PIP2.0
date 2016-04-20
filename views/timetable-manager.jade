@@ -3,49 +3,51 @@ extends layouts/main-layout
 block content
   .row
     .col.s8
-      h1 #{title}
+      h3 #{title}
     .col.s4
       .change-timetable-button
         a.waves-effect.waves-light.btn Change Timetable
+  
+  .row    
+    table
+      thead
+        tr
+          th(data-field='monday') Monday
+          th(data-field='tuesday') Tuesday
+          th(data-field='wednesday') Wednesday
+          th(data-field='thursday') Thursday
+          th(data-field='friday') Friday
+          
+      tbody
+      
+        tr
+          for module, index in morningModules
+            td
+              if module.name
+                .card-panel.teal
+                  span.white-text
+                    p= module.name
+                    
+                    i.material-icons.left alarm
+                    p= module.time
         
-  table
-    thead
-      tr
-        th(data-field='monday') Monday
-        th(data-field='tuesday') Tuesday
-        th(data-field='wednesday') Wednesday
-        th(data-field='thursday') Thursday
-        th(data-field='friday') Friday
+                    i.material-icons.left place
+                    p= module.location
         
-    tbody
-      tr
-        td
-      tr
-        td
-      tr
-        td
-      tr
-        td
-      tr
-        td
-        // TODO: Fix this so it reads from the index.js file
-        //- script.
-        //-   var modules = !{JSON.stringify(morningModules)}
-        //-   modules.forEach(function(module) {
-        //-     
-        //-   });
-        //-     td
-        //-       .card-panel.teal
-        //-         .span.white-text
-        //-           p Hello
-                  //!{item.name}
-              
-                  //- i.material-icons.left alarm
-                  //- p !{item.time}
-                  //- 
-                  //- i.material-icons.left place
-                  //- p !{item.location}
+        tr
+          for module, index in afternoonModules
+            td
+              if module.name
+                .card-panel.teal
+                  span.white-text
+                    p= module.name
+                    
+                    i.material-icons.left alarm
+                    p= module.time
         
+                    i.material-icons.left place
+                    p= module.location            
+                
   .row
     .col.s4
       a.waves-effect.waves-light.btn.disabled(id='semester_one_button', onClick="semesterOneButtonClicked();")
