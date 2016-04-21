@@ -3,3 +3,55 @@ extends ../layouts/main-layout
 block content
   h3= title
   
+  br
+  .row
+    .center-align
+      .col.s6
+        // Left side
+        h5 Current Enrollment Status
+        a.waves-effect.waves-light.btn-large.modal-trigger#academic_enroll(href="#enrollment_dialog")
+          | Not Enrolled
+          
+      .col.s6
+        // Right side
+        h5 Current Financial Status
+        a.waves-effect.waves-light.btn-large.modal-trigger#finance_enroll(href="#financial_dialog")
+          | Not Enrolled
+
+    
+  #enrollment_dialog.modal
+    .modal-content
+      h4 Would you like to enroll?
+
+    .modal-footer
+      a.modal-action.modal-close.waves-effect.waves-green.btn-flat(onClick='didEnroll();')
+        | Yes
+      a.modal-action.modal-close.waves-effect.waves-red.btn-flat 
+        | Cancel
+        
+  #financial_dialog.modal
+    .modal-content
+      h4 Would you like to enroll financially?
+
+    .modal-footer
+      a.modal-action.modal-close.waves-effect.waves-green.btn-flat(onClick='didEnrollFinancially();')
+        | Yes
+      a.modal-action.modal-close.waves-effect.waves-red.btn-flat 
+        | Cancel
+
+
+
+  script.
+    $(document).ready(function() {
+      $('.modal-trigger').leanModal();
+    });
+    
+    function didEnroll() {
+      $('#academic_enroll').val('Enrolled');
+      $('#academic_enroll').addClass('disabled');
+    }
+    
+    function didEnrollFinancially() {
+      $('#finance_enroll').prop('value', 'Enrolled');
+      $('#finance_enroll').addClass('disabled');
+    }

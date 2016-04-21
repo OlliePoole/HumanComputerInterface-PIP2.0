@@ -5,17 +5,37 @@
     .nav-wrapper
       form
         .input-field
-          input#search(type='search', required='')
+          input#search(type='search', onsearch='OnSearch(this);')
           label(for='search')
             i.material-icons search
           i.material-icons close
-      
 
-  script.
-    
-    $("#search").keyup(function(event){
-      if(event.keyCode == 13){
-        var searchTerm = $('#search').val();
-        // do something with the search term
+        ul#dropdown1.dropdown-content
+          li
+            a(href='#!') Hello
+          li
+            a(href='#!') World
+          li
+            a(href='#!') three
+
+
+    script.
+      function OnSearch(input) {
+        if(input.value !== "") {
+          console.log(input.value);
+          //TODO: fix this.
+        }
+        
+        $('#dropdown1').dropdown({
+          inDuration: 300,
+          outDuration: 225,
+          constrain_width: false, // Does not change width of dropdown to that of the activator
+          hover: true, // Activate on hover
+          gutter: 0, // Spacing from edge
+          belowOrigin: false, // Displays dropdown below the button
+          alignment: 'left' // Displays dropdown with edge aligned to the left of button
+        });
       }
-    });
+        
+      
+    

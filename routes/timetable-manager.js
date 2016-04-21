@@ -19,8 +19,14 @@ function student_timetable() {
                                      {name: "Data Structures", time: "1PM", location: "C1.13"},
                                      {}, {}];
 
+  // Exams
+  var exams = [{name: "Advanced OOP", date: "May 9th", time: "1PM", location: "Wheatley Campus"},
+                {name: "Data Structures", date: "May 15th", time: "9AM", location: "JHB - Sports Hall"}];
+
   return { semesterOne: { morning: semesterOneMorningModules, afternoon: semesterOneAfternoonModules },
-           semesterTwo: { morning: semesterTwoMorningModules, afternoon: semesterTwoAfternoonModules }};
+           semesterTwo: { morning: semesterTwoMorningModules, afternoon: semesterTwoAfternoonModules },
+           exams      : exams
+         };
 
 }
 
