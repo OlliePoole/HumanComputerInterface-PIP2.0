@@ -1,0 +1,44 @@
+extends layouts/main-layout
+
+block content
+  h3 #{title}
+  
+  .row
+    .col.s9
+      // Main body
+      ul.collapsible.popout(data-collapsible='accordion')
+        li
+          .collapsible-header.active
+            span.accordian-title-text Personal Details
+            
+          .collapsible-body
+            ul.collection
+              li.collection-item Full Name: Mr Niles Peppertrout
+              li.collection-item Birth Date: 01/01/1992
+              li.collection-item Gender: Male
+              
+              li.collection-item Number: 12309821
+        
+        li
+          .collapsible-header
+            span.accordian-title-text Course Details
+            
+          .collapsible-body
+            ul.collection
+              li.collection-item Course: BSc Computer Science
+              li.collection-item Subjects: SQ
+        
+        li
+          .collapsible-header
+            span.accordian-title-text Enrollment Details
+            
+          .collapsible-body
+            ul.collection
+              li.collection-item Expected Completion Date: May 2016
+              li.collection-item Enrollment Status: Fully Enrolled
+          
+    .col.s3
+      .card-panel.teal
+        span.white-text
+          | It is important that you always keep your contact details up-to-date. 
+          | Student Central

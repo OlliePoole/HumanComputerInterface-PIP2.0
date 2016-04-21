@@ -39,7 +39,7 @@ block content
       var available_ids = ["student", "lecturer", "applicant"];
 
       if (available_ids.indexOf(user_id) != -1) {
-        location.href = 'myPIP?user=' + available_ids.indexOf(user_id)
+        location.href = user_id + '-myPIP'
       } else {
         alert("User not found, acceptable IDs: 'student' | 'lecturer' | 'applicant' ");
       }

@@ -1,0 +1,100 @@
+extends ../layouts/main-layout
+
+// Builds a row in the table
+mixin tableRowBuilder(modules)
+  tr
+    for module, index in modules
+      td
+        if module.name
+          +cardBuilder(module.name, module.time, module.location)
+
+// Builds card to be displayed in the table
+mixin cardBuilder(name, time, location)
+  .card-panel.teal
+    span.white-text
+      h5= name
+      
+      i.material-icons.left alarm
+      p= time
+
+      i.material-icons.left place
+      p= location
+
+block content
+
+  .row
+    .col.s8
+      h3 #{title}
+    .col.s4
+      .change-timetable-button
+        a.waves-effect.waves-light.btn Change Timetable
+  
+  .row  
+  
+    #semester-one-morning-modules-row(style='display:none')
+      +tableRowBuilder(semesterOne.morning)
+    #semester-one-afternoon-modules-row(style='display:none')
+      +tableRowBuilder(semesterOne.afternoon)
+      
+    #semester-two-morning-modules-row(style='display:none')
+      +tableRowBuilder(semesterTwo.morning)
+    #semester-two-afternoon-modules-row(style='display:none')
+      +tableRowBuilder(semesterTwo.afternoon)
+    
+    table#timetable
+      thead
+        tr
+          th(data-field='monday') Monday
+          th(data-field='tuesday') Tuesday
+          th(data-field='wednesday') Wednesday
+          th(data-field='thursday') Thursday
+          th(data-field='friday') Friday
+          
+      tbody
+                
+        +tableRowBuilder(semesterOne.morning)
+        +tableRowBuilder(semesterOne.afternoon)         
+                
+  .row
+    .col.s4
+      a.waves-effect.waves-light.btn.disabled(id='semester_one_button', onClick="semesterOneButtonClicked();")
+        | Semester One
+        
+    .col.s4
+      a.waves-effect.waves-light.btn(id='semester_two_button', onClick="semesterTwoButtonClicked();")
+        | Semester Two
+    
+    .col.s4
+      a.waves-effect.waves-light.btn(id='exam_button', onClick="examButtonClicked();")
+        | Exam
+  
+  script.
+    function semesterOneButtonClicked() {
+      $('#semester_one_button').addClass('disabled');
+      $('#semester_two_button').removeClass('disabled');
+      $('#exam_button').removeClass('disabled');
+      
+      $('#timetable tbody tr').first().remove();
+      $('#timetable tbody tr').last().remove();
+      
+      $('#timetable tbody').after($('#semester-one-afternoon-modules-row')[0].innerHTML);
+      $('#timetable tbody').after($('#semester-one-morning-modules-row')[0].innerHTML);
+      
+    }
+    
+    function semesterTwoButtonClicked() {
+      $('#semester_one_button').removeClass('disabled');
+      $('#semester_two_button').addClass('disabled');
+      $('#exam_button').removeClass('disabled');
+      
+      $('#timetable tbody').empty();
+      $('#timetable tbody').after($('#semester-two-afternoon-modules-row')[0].innerHTML);
+      $('#timetable tbody').after($('#semester-two-morning-modules-row')[0].innerHTML);
+      
+    }
+    
+    function examButtonClicked() {
+      $('#semester_one_button').removeClass('disabled');
+      $('#semester_two_button').removeClass('disabled');
+      $('#exam_button').addClass('disabled');
+    }

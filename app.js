@@ -23,12 +23,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.locals.basedir = path.join(__dirname, 'views');
 
-app.use('/myPIP', routes.myPIP);
-app.use('/timetable', routes.timetable);
-app.use('/modules', routes.modules);
-app.use('/settings', routes.settings);
+app.use('/', routes);
 
-app.use('/', routes.login);
+// Student routes
+app.use('/student-myPIP', routes);
+app.use('/student-timetable', routes);
+app.use('/student-modules', routes);
+app.use('/student-settings', routes);
+
+// Lecturer routes
+// app.use('/lecturer-myPIP', lecturerRoutes.myPIP);
+// app.use('/lecturer-timetable', lecturerRoutes.timetable);
+// app.use('/lecturer-settings', lecturerRoutes.settings);
+
+// Applicant routes
+
 
 
 // catch 404 and forward to error handler
