@@ -1,0 +1,12 @@
+table#timetable
+  thead
+    tr
+      th(data-field='monday') Monday
+      th(data-field='tuesday') Tuesday
+      th(data-field='wednesday') Wednesday
+      th(data-field='thursday') Thursday
+      th(data-field='friday') Friday
+      
+  tbody      
+    +tableRowBuilder(morningModules)
+    +tableRowBuilder(afternoonModules) 

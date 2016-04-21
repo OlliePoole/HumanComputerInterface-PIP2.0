@@ -1,0 +1,10 @@
+
+- var examOne = timetable.exams[0];
+- var examTwo = timetable.exams[1];
+
+h5 Exams this semester
+.row 
+  .col.s6
+    + examCardBuilder(examOne.name, examOne.date, examOne.time, examOne.location)
+  .col.s6
+    + examCardBuilder(examTwo.name, examTwo.date, examTwo.time, examTwo.location)

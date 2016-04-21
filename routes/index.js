@@ -25,9 +25,9 @@ router.get('/student-myPIP', function(req, res) {
 });
 
 router.get('/student-timetable', function(req, res) {
-  res.render('timetable-manager', { title: 'My Timetable',
-                                            timetable: timetableManger.student_timetable(),
-                                            pageNum: 2, user: 0 });
+  res.render('my-timetable/timetable-manager', { title: 'My Timetable',
+                                                 timetable: timetableManger.student_timetable(),
+                                                 pageNum: 2, user: 0 });
 });
 
 router.get('/student-modules', function(req, res) {
@@ -54,9 +54,9 @@ router.get('/lecturer-myPIP', function(req, res) {
  });
 
 router.get('/lecturer-timetable', function(req, res) {
-  res.render('timetable-manager', { title: 'My Timetable',
-                                            timetable: timetableManger.lecturer_timetable(),
-                                            pageNum: 2, user: 1 });
+  res.render('my-timetable/timetable-manager', { title: 'My Timetable',
+                                                 timetable: timetableManger.lecturer_timetable(),
+                                                 pageNum: 2, user: 1 });
 });
 
 router.get('/lecturer-settings', function(req, res) {

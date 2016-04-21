@@ -1,0 +1,37 @@
+
+// Builds a row in the table
+mixin tableRowBuilder(modules)
+  tr
+    for module, index in modules
+      td
+        if module.name
+          +cardBuilder(module.name, module.time, module.location)
+
+
+// Builds card to be displayed in the table
+mixin cardBuilder(name, time, location)
+  .card-panel.teal
+    span.white-text
+      h5= name
+      
+      i.material-icons.left alarm
+      p= time
+
+      i.material-icons.left place
+      p= location
+      
+      
+// Builds card to be display an exam
+mixin examCardBuilder(name, date, time, location)
+  .card-panel.teal
+    span.white-text
+      h5= name
+      
+      i.material-icons.left pin_drop
+      p= date
+      
+      i.material-icons.left alarm
+      p= time
+
+      i.material-icons.left place
+      p= location
