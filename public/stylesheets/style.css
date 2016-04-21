@@ -27,3 +27,8 @@ header, main, footer {
   vertical-align: bottom;
   /* TODO: Fix this! */
 }
+
+.bottom {
+  display: block;
+  vertical-align: bottom;
+}
