@@ -1,7 +1,7 @@
-extends layouts/main-layout
+extends ../layouts/main-layout
 
 block content
-  h3 #{title}
+  h3= title
   
   .row
     .col.s9
@@ -13,11 +13,10 @@ block content
             
           .collapsible-body
             ul.collection
-              li.collection-item Full Name: Mr Niles Peppertrout
-              li.collection-item Birth Date: 01/01/1992
-              li.collection-item Gender: Male
+              li.collection-item Full Name: Lauren Woods
+              li.collection-item Birth Date: 12/04/1992
+              li.collection-item Gender: Female
               
-              li.collection-item Number: 12309821
         
         li
           .collapsible-header
@@ -25,8 +24,8 @@ block content
             
           .collapsible-body
             ul.collection
-              li.collection-item Course: BSc Computer Science
-              li.collection-item Subjects: SQ
+              li.collection-item Course: BSc Mathematics
+              li.collection-item Subjects: MA
         
         li
           .collapsible-header
@@ -34,8 +33,7 @@ block content
             
           .collapsible-body
             ul.collection
-              li.collection-item Expected Completion Date: May 2016
-              li.collection-item Enrollment Status: Fully Enrolled
+              li.collection-item Enrollment Status: Applicant
           
     .col.s3
       .card-panel.teal

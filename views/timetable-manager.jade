@@ -32,14 +32,14 @@ block content
   .row  
   
     #semester-one-morning-modules-row(style='display:none')
-      +tableRowBuilder(semesterOne.morning)
+      +tableRowBuilder(timetable.semesterOne.morning)
     #semester-one-afternoon-modules-row(style='display:none')
-      +tableRowBuilder(semesterOne.afternoon)
+      +tableRowBuilder(timetable.semesterOne.afternoon)
       
     #semester-two-morning-modules-row(style='display:none')
-      +tableRowBuilder(semesterTwo.morning)
+      +tableRowBuilder(timetable.semesterTwo.morning)
     #semester-two-afternoon-modules-row(style='display:none')
-      +tableRowBuilder(semesterTwo.afternoon)
+      +tableRowBuilder(timetable.semesterTwo.afternoon)
     
     table#timetable
       thead
@@ -52,8 +52,8 @@ block content
           
       tbody
                 
-        +tableRowBuilder(semesterOne.morning)
-        +tableRowBuilder(semesterOne.afternoon)         
+        +tableRowBuilder(timetable.semesterOne.morning)
+        +tableRowBuilder(timetable.semesterOne.afternoon)         
                 
   .row
     .col.s4

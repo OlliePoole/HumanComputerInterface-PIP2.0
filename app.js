@@ -32,12 +32,14 @@ app.use('/student-modules', routes);
 app.use('/student-settings', routes);
 
 // Lecturer routes
-// app.use('/lecturer-myPIP', lecturerRoutes.myPIP);
-// app.use('/lecturer-timetable', lecturerRoutes.timetable);
-// app.use('/lecturer-settings', lecturerRoutes.settings);
+app.use('/lecturer-myPIP', routes);
+app.use('/lecturer-timetable', routes);
+app.use('/lecturer-settings', routes);
 
 // Applicant routes
-
+app.use('/applicant-myPIP', routes);
+app.use('/applicant-enrollment', routes);
+app.use('/applicant-settings', routes);
 
 
 // catch 404 and forward to error handler
