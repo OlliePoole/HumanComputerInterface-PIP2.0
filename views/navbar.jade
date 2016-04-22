@@ -9,27 +9,39 @@
       .col.s4
         .card.small
           .card-content
-            img.circle(src='images/search-results/penny1.jpg')
-            p.bold Lecturer
+            .col.s6
+              img.circle(src='images/search-results/penny1.jpg')
+            .col.s6
+              h5.bold Penny Tool
+              h5 Lecturer
           .card-action
-            a(href='#') This is a link
+            a(href='#') 07734389157
+            a(href='#') PennyTool@brookes.ac.uk
             
       .col.s4
         .card.small
           .card-content
-            img.circle(src='images/search-results/penny2.jpg')
-            p.bold Lecturer
+            .col.s6
+              img.circle(src='images/search-results/penny2.jpg')
+            .col.s6
+              h5.bold Penny Johnson
+              h5 Student
           .card-action
-            a(href='#') This is a link
+            a(href='#') 077111189157
+            a(href='#') PennyJohnson@brookes.ac.uk
             
             
       .col.s4
         .card.small
           .card-content
-            img.circle(src='images/search-results/penny3.jpg')
-            p.bold Lecturer
+            .col.s6
+              img.circle(src='images/search-results/penny3.jpg')
+            .col.s6
+              h5.bold Penny Smith
+              h5 Lecturer
           .card-action
-            a(href='#') This is a link
+            a(href='#') 02234389857
+            a(href='#') PennySmith@brookes.ac.uk
 
 
 
@@ -39,7 +51,7 @@
 .navbar-fixed
   nav
     .nav-wrapper
-      form
+      form(onsubmit="return false")
         .input-field
           input#search(type='search', onsearch='OnSearch(this);')
           label(for='search')
@@ -49,17 +61,15 @@
 
 
     script.
+      
       function OnSearch(input) {
         if (input.value !== "") {
           console.log(input.value);
           $('#search_results_modal').openModal();
+          return;
         }  
       }
       
-      $(document).ready(function(){
-        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-        $('.modal-trigger').leanModal();
-      });
 
         
       
