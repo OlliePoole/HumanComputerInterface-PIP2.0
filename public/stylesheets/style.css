@@ -32,6 +32,10 @@ header, main, footer {
   font-weight: bold;
 }
 
+.card-short {
+  height: 200px;
+}
+
 .bottom {
   display: block;
   vertical-align: bottom;

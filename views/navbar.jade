@@ -1,52 +1,31 @@
 // Navbar for the site
 
+mixin searchResultsCardBuilder(name, image, jobTitle, phone, email)
+  .col.s4
+    .card
+      .card-content
+        .row
+          .col.s4
+            img.circle(src=image)
+          .col.s8
+            h4.bold= name
+            h5.bold= jobTitle
+            
+            br
+            h5 #{phone}            
+            h5 #{email}
+
+
 // Modal Structure
 #search_results_modal.modal.bottom-sheet
   .modal-content
     h4 Search Results
     
     .row 
-      .col.s4
-        .card.small
-          .card-content
-            .col.s6
-              img.circle(src='images/search-results/penny1.jpg')
-            .col.s6
-              h5.bold Penny Tool
-              h5 Lecturer
-          .card-action
-            a(href='#') 07734389157
-            a(href='#') PennyTool@brookes.ac.uk
-            
-      .col.s4
-        .card.small
-          .card-content
-            .col.s6
-              img.circle(src='images/search-results/penny2.jpg')
-            .col.s6
-              h5.bold Penny Johnson
-              h5 Student
-          .card-action
-            a(href='#') 077111189157
-            a(href='#') PennyJohnson@brookes.ac.uk
-            
-            
-      .col.s4
-        .card.small
-          .card-content
-            .col.s6
-              img.circle(src='images/search-results/penny3.jpg')
-            .col.s6
-              h5.bold Penny Smith
-              h5 Lecturer
-          .card-action
-            a(href='#') 02234389857
-            a(href='#') PennySmith@brookes.ac.uk
-
-
-
-
-    
+      +searchResultsCardBuilder('Penny Tool', 'images/search-results/penny1.jpg', 'Lecturer', '07734389157', 'PennyTool@brookes.ac.uk')
+      +searchResultsCardBuilder('Penny Johnson', 'images/search-results/penny2.jpg', 'Student', '077111189157', 'PennyJohnson@brookes.ac.uk')
+      +searchResultsCardBuilder('Penny Smith', 'images/search-results/penny3.jpg', 'Lecturer', '02234389857', 'PennySmith@brookes.ac.uk')
+      
 
 .navbar-fixed
   nav
