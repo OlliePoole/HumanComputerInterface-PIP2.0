@@ -28,6 +28,10 @@ header, main, footer {
   /* TODO: Fix this! */
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .bottom {
   display: block;
   vertical-align: bottom;

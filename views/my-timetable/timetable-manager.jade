@@ -16,29 +16,42 @@ block content
           
           .col.s12
             h5#timetable_id Timetable One
-            a.waves-effect.waves-light.btn(onClick='nextTimetableOption();') Next Option
+            a.waves-effect.waves-light.btn#next_option_button(onClick='nextTimetableOption();') Next Option
+              
+            #timetable_one
+              - var morningModules = timetable.semesterOne.morning
+              - var afternoonModules = timetable.semesterOne.afternoon
+              
+              include timetable
             
-            script.
-              function nextTimetableOption() {
-                $('#timetable_id').val("Timetabe Two")
-                                
-                $('#modal_timetable tbody').empty();
-                $('#modal_timetable tbody').after($('#semester-two-afternoon-modules-row')[0].innerHTML);
-                $('#modal_timetable tbody').after($('#semester-two-morning-modules-row')[0].innerHTML);
-              }
+            #timetable_two(style='display:none')
+              - var morningModules = timetable.semesterTwo.morning
+              - var afternoonModules = timetable.semesterTwo.afternoon
             
-            table#modal_timetable
-              thead
-                tr
-                  th(data-field='monday') Monday
-                  th(data-field='tuesday') Tuesday
-                  th(data-field='wednesday') Wednesday
-                  th(data-field='thursday') Thursday
-                  th(data-field='friday') Friday
-                  
-              tbody      
-                +tableRowBuilder(timetable.semesterOne.morning)
-                +tableRowBuilder(timetable.semesterOne.afternoon) 
+              include timetable 
+              
+        script.
+          // On click handler for the modal 
+          function nextTimetableOption() {
+            var currentTimetable = $('#timetable_id').text();
+            
+            if (currentTimetable == "Timetable One") {
+              // Show timetable two
+              $('#timetable_id').text("Timetable Two");
+              $('#next_option_button').text('Previous Option');
+              
+              $('#timetable_one').hide()
+              $('#timetable_two').show()
+              
+            } else {
+              // show timetable one
+              $('#timetable_id').text("Timetable One");
+              $('#next_option_button').text('Next Option');
+              
+              $('#timetable_one').show()
+              $('#timetable_two').hide()
+            }
+          }
 
         .modal-footer
           a.modal-action.modal-close.waves-effect.waves-green.btn-flat
@@ -78,6 +91,7 @@ block content
         .col.s4
           a.waves-effect.waves-light.btn(id='exam_button', onClick="examButtonClicked();")
             | Exam
+  
   
   script.
     function semesterOneButtonClicked() {

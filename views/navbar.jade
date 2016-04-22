@@ -1,5 +1,41 @@
 // Navbar for the site
 
+// Modal Structure
+#search_results_modal.modal.bottom-sheet
+  .modal-content
+    h4 Search Results
+    
+    .row 
+      .col.s4
+        .card.small
+          .card-content
+            img.circle(src='images/search-results/penny1.jpg')
+            p.bold Lecturer
+          .card-action
+            a(href='#') This is a link
+            
+      .col.s4
+        .card.small
+          .card-content
+            img.circle(src='images/search-results/penny2.jpg')
+            p.bold Lecturer
+          .card-action
+            a(href='#') This is a link
+            
+            
+      .col.s4
+        .card.small
+          .card-content
+            img.circle(src='images/search-results/penny3.jpg')
+            p.bold Lecturer
+          .card-action
+            a(href='#') This is a link
+
+
+
+
+    
+
 .navbar-fixed
   nav
     .nav-wrapper
@@ -10,32 +46,21 @@
             i.material-icons search
           i.material-icons close
 
-        ul#dropdown1.dropdown-content
-          li
-            a(href='#!') Hello
-          li
-            a(href='#!') World
-          li
-            a(href='#!') three
 
 
     script.
       function OnSearch(input) {
-        if(input.value !== "") {
+        if (input.value !== "") {
           console.log(input.value);
-          //TODO: fix this.
-        }
-        
-        $('#dropdown1').dropdown({
-          inDuration: 300,
-          outDuration: 225,
-          constrain_width: false, // Does not change width of dropdown to that of the activator
-          hover: true, // Activate on hover
-          gutter: 0, // Spacing from edge
-          belowOrigin: false, // Displays dropdown below the button
-          alignment: 'left' // Displays dropdown with edge aligned to the left of button
-        });
+          $('#search_results_modal').openModal();
+        }  
       }
+      
+      $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+      });
+
         
       
     

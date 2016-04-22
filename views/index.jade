@@ -8,31 +8,32 @@ block content
   
   .center-align
     .row
-      form.col.s12
-        .left-align
-          .row
-            .input-field.col.s6
-              input#user_id.validate(type='text', required)
-              label(for='user_id') Applicant/Personal ID
-          
-          .row
-            .input-field.col.s6  
-              input#user_password.validate(type='password', required)
-              label(for='user_password') Password
-          
-          .row
-            .input-field.col.s12
-              a.btn.waves-effect.waves-light(type='button', onClick="login();")
-                | Login
-                i.material-icons.right send
+      .col.s12
+        form
+          .left-align
+            .row
+              .input-field.col.s6
+                input#user_id.validate(type='text', required)
+                label(for='user_id') Applicant/Personal ID
+            
+            .row
+              .input-field.col.s6  
+                input#user_password.validate(type='password', required)
+                label(for='user_password') Password
+            
+            .row
+              .input-field.col.s12
+                a.btn.waves-effect.waves-light(type='button', onClick="login();")
+                  | Login
+                  i.material-icons.right send
                 
   script.
     function login() {
       var user_id = document.getElementById('user_id').value;
       var user_password = document.getElementById('user_password').value;
             
-      if (user_id == "" || user_password == "") {
-          alert("Fill the entire form in you stupid human!");
+      if (user_id == "") {
+          alert("User ID is blank, please make sure you enter an ID");
           return;
       }
       
