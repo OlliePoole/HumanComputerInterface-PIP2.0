@@ -7,13 +7,13 @@ mixin searchResultsCardBuilder(name, image, jobTitle, phone, email)
         .row
           .col.s4
             img.circle(src=image)
-          .col.s8
-            h4.bold= name
-            h5.bold= jobTitle
+          .col.s8.push-s2
+            h6.bold= name
+            h6.bold= jobTitle
             
             br
-            h5 #{phone}            
-            h5 #{email}
+            h7 #{phone}            
+            h7 #{email}
 
 
 // Modal Structure
@@ -22,9 +22,9 @@ mixin searchResultsCardBuilder(name, image, jobTitle, phone, email)
     h4 Search Results
     
     .row 
-      +searchResultsCardBuilder('Penny Tool', 'images/search-results/penny1.jpg', 'Lecturer', '07734389157', 'PennyTool@brookes.ac.uk')
-      +searchResultsCardBuilder('Penny Johnson', 'images/search-results/penny2.jpg', 'Student', '077111189157', 'PennyJohnson@brookes.ac.uk')
-      +searchResultsCardBuilder('Penny Smith', 'images/search-results/penny3.jpg', 'Lecturer', '02234389857', 'PennySmith@brookes.ac.uk')
+      +searchResultsCardBuilder('Penny Tool', 'images/search-results/penny1.jpg', 'Lecturer', '07734389157', 'PTool@brookes.ac.uk')
+      +searchResultsCardBuilder('Penny Johnson', 'images/search-results/penny2.jpg', 'Student', '077111189157', 'PJohnson@brookes.ac.uk')
+      +searchResultsCardBuilder('Penny Smith', 'images/search-results/penny3.jpg', 'Lecturer', '02234389857', 'PSmith@brookes.ac.uk')
       
 
 .navbar-fixed
