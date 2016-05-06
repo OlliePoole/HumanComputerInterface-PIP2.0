@@ -79,18 +79,28 @@ block content
                   .input-field.col.s6
                     a.btn.waves-effect.waves-light(type='button', onClick="updatePersonalDetails();")
                       | Save
+        
+        li
+          .collapsible-header
+            span.accordian-title-text Accessibility Options
           
+          .collapsible-body
+            .row
+              .col.s6
+                p Increase font size
+                  img(src='/images/accessibility/font-size-increase.png')
+                
+              .col.s6
+                p Decrease font size
+                  img(src='/images/accessibility/font-size-decrese.png')
+            
           
   script.
     function updatePassword() {
-      
       // TODO: Work out how to dynamically close accordian
-      
       Materialize.toast('Password Updated', 3000, 'rounded')
     }    
     
     function updatePersonalDetails() {
-      
       Materialize.toast('Personal Information Updated', 3000, 'rounded')
-      
     }
