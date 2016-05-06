@@ -40,3 +40,8 @@ header, main, footer {
   display: block;
   vertical-align: bottom;
 }
+
+.timetable-card {
+  display: block;
+  width: 200px;
+}
